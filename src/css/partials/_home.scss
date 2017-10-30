@@ -1,0 +1,579 @@
+/*
+##  1. Header Section
+##  2. Main Section
+##  2.1. About Section
+##  2.2. Testmonials
+##  2.3. Pricing Plans
+##  3. Footer
+*/
+
+
+/*
+##
+##  1. Header Section
+##
+*/
+
+.hero-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .hero-copy {
+        flex: 1 0 230px;
+        align-self: center;
+        padding: 0 40px 0 60px;
+
+        @include mobile {
+            width: calc(100vw - 60px);
+            padding: 60px 0;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-family: $Pacifico;
+            color: white;
+            text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.25);
+        
+            @include mobile {
+                text-align: center;
+            }
+        }
+        
+        .hero-subheading {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            line-height: 1.45;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+            font-weight: 500;
+        
+            @include mobile {
+                text-align: center;
+            }
+        }
+        
+        .hero-links {
+            list-style: none;
+            margin-top: 30px;
+            
+            @include mobile {
+                text-align: center;
+            }
+        
+            li {
+                display: inline-block;
+                margin-right: 15px;
+            }
+        
+            .hero-icon {
+                background-image: url('../imgs/icons-systems.png');
+                background-repeat: no-repeat;
+                display: block;
+                width: 53px;
+                height: 53px;
+                opacity: 0.5;
+        
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        
+            .icon-ios {
+                background-position: 0 0;
+            }
+        
+            .icon-android {
+                background-position: -53px 0;
+            }
+        
+            .icon-windows {
+                background-position: -106px 0;
+            }
+        }
+    }
+
+    .hero-image {
+        flex: 1 0 440px;
+        max-width: 439px;
+        align-items: flex-end;
+        align-self: flex-end;
+        margin-bottom: -3px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @include mobile {
+            flex: 1 0 auto;
+            align-items: flex-start;
+            margin-left: calc(100% / 4.5);
+        }
+    }
+}
+
+
+/*
+##
+##  2. Main Section
+##
+*/
+
+.section-heading {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: $Myriad;
+    font-weight: bold;
+    color: $black;
+}
+
+.section-subheading {
+    padding: 0 40px;
+}
+
+.features {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+
+    .feature-item {
+        position: relative;
+        text-align: center;
+        width: calc(100% / 3 - 80px);
+        padding: 20px 30px 0;
+        margin-bottom: 60px;
+        border-right: 1px solid $light-gray;
+
+        @include desktop {
+            &:nth-child(n+4)::before {
+                content: "";
+                width: calc(100% - 80px);
+                height: 1px;
+                display: block;
+                position: absolute;
+                background-color: $light-gray;
+                top: -30px;
+            }
+
+            &:nth-child(3n+3) {
+                border-right: none;
+            }
+        }
+
+        @include tablet {
+            width: calc(100% / 2 - 80px);
+
+            &:nth-child(n+3)::before {
+                content: "";
+                width: calc(100% - 80px);
+                height: 1px;
+                display: block;
+                position: absolute;
+                background-color: $light-gray;
+                top: -30px;
+            }
+
+            &:nth-child(2n+2) {
+                border-right: none;
+            }
+    
+            &::before {
+                display: none;
+            }
+        }
+
+        @include mobile {
+            width: 100%;
+            border-right: none;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid $light-gray;
+
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+
+            &:nth-child(n+4)::before {
+                display: none;
+            }
+        }
+    }
+
+    .feature-icon {
+        display: inline-block;
+        background: url('../imgs/icons-features.png') no-repeat;
+        overflow: hidden;
+        text-indent: -9999px;
+        text-align: left;
+    }
+
+    .icon-design {
+        background-position: 0 0;
+        width: 48px;
+        height: 42px;
+    }
+
+    .icon-friendly {
+        background-position: 0 -42px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-photos {
+        background-position: 0 -90px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-colors {
+        background-position: 0 -138px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-marketable {
+        background-position: 0 -186px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .icon-editable {
+        background-position: 0 -232px;
+        width: 42px;
+        height: 47px;
+    }
+
+    .feature-heading {
+        font-size: 24px;
+        margin: 30px 0;
+        font-family: $Myriad;
+        font-weight: bold;
+        color: $black;
+    }
+}
+
+
+
+/*
+##
+##  2.1. About Section
+##
+*/
+
+
+.about {
+    background-color: $gray;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .about-copy {
+        flex: 100%;
+        
+        @include desktop {
+            flex: 2 1 60%;
+        }
+    }
+
+    .about-features {
+        list-style-image: url('../imgs/bullet.png');
+        margin: 1rem 0 0 2rem;
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+    }
+
+    .about-video {
+        align-self: center;
+        margin-top: 60px;
+        width: 100%;
+        
+        @include desktop {
+            flex: 1 0 40%;
+            padding-left: 4rem;
+            margin-top: 0;
+        }
+    }
+
+    .video-embedded {
+        border-radius: 8px;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+
+/*
+##
+##  2.2. Testmonials
+##
+*/
+
+.testmonials-slider {
+    
+    @include desktop {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .testmonial {
+        font-family: $Helvetica;
+        font-style: italic;
+        color: $dark-gray;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .author {
+        font-family: $Myriad;
+        color: $black;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+
+
+/*
+##
+##  2.3. Pricing
+##
+*/
+
+.pricing {
+    background-color: $gray;
+    margin-bottom: 60px;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: -110px;
+
+    @include tablet {
+        flex-direction: column;
+    }
+    
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .plan {
+        width: calc(100% / 4 - 3px);
+        transition: transform 0.1s ease-in;
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        @include mobile {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .plan-top,
+    .plan-bottom {
+        background-color: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plan-top {
+        height: 55px;
+
+        .plan-name {
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    .plan-description {
+        background-color: white;
+        text-align: center;
+
+        .plan-features {
+            list-style: none;
+            width: 85%;
+            margin: 0 auto;
+
+            li {
+                border-top: 1px solid $hr;
+                padding: 1rem 0;
+            }
+        }
+
+        .plan-price {
+            font-size: 52px;
+            font-family: $Novecento;
+            font-weight: 500;
+            line-height: 1.2;
+            color: black;
+            
+            .cents {
+                font-size: 28px;
+                vertical-align: super;
+            }
+        }
+    }
+
+    .plan-bottom {
+        height: 80px;
+
+        .plan-btn {
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: block;
+            background-color: $primary-color-btn;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            
+            &:hover {
+                background-color: darken($primary-color-btn, 10%);
+            }
+        }
+    }
+}
+
+
+
+/*
+##
+##  3. Footer
+##
+*/
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 16em;
+    margin: 20px auto 0;
+
+    .link {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light-gray;
+        transition: background-color 0.1s ease-in-out;
+
+        &:hover {
+            background-color: $primary-color;
+        }
+    }
+}
+
+.icons-medias {
+    background: url('../imgs/icons-contact.png');
+    display: block;
+}
+
+.icon-twitter {
+    width: 17px;
+    height: 13px;
+    margin-left: 1px;
+    background-position: -24px -0;
+}
+
+.icon-facebook {
+    width: 9px;
+    height: 17px;
+    background-position: -0 -0;
+}
+
+.icon-pinterest {
+    width: 20px;
+    height: 20px;
+    background-position: -78px -0;
+}
+
+.icon-googleplus {
+    width: 19px;
+    height: 18px;
+    margin-left: 2px;
+    background-position: -59px -0;
+}
+
+.icon-linkedin {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2px;
+    background-position: -9px -0;
+}
+
+.icon-youtube {
+    width: 18px;
+    height: 22px;
+    margin-bottom: 2px;
+    background-position: -41px -0;
+}
+
+.footer-links {
+    list-style: none;
+    text-align: center;
+
+    li {
+        display: block;
+        margin-bottom: 0.5em;
+        padding: 0.5em 0 1em;
+        border-bottom: 1px solid #cecece;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include desktop {
+            display: inline-block;
+            padding: 0 20px;
+            margin: 0;
+            border: none;
+        }
+    }
+}

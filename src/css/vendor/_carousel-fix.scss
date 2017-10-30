@@ -1,0 +1,24 @@
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  background-color: #3598db;
+  color: transparent;
+}
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  content: '•';
+  text-align: center;
+  opacity: 1;
+  border-radius: 50%;
+  color: transparent;
+  border: 2px solid #3598db;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

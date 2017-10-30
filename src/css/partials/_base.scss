@@ -1,0 +1,52 @@
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: $Helvetica;
+    color: #848484;
+}
+
+header {
+    background-image: url('../imgs/pattern.jpg');
+    background-repeat: repeat;
+}
+
+footer {
+    background-color: $light-gray;
+    min-height: 130px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    
+    &:visited {
+        color: inherit;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: calc(100vw - 10%);
+    margin: 0 auto;
+    padding: 60px 0;
+    
+    @include tablet {
+        width: calc(100vw - 80px);
+    }
+
+    @include mobile {
+        width: calc(100vw - 60px);
+    }
+}
