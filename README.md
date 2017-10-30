@@ -14,7 +14,7 @@ grunt build
 open dist/index.html
 ```
 
-## Screenshot
+## Screenshots
 
 ![alt text](/screenshot-mobile.png "Screenshot of working demo on mobile.")
 ![alt text](/screenshot-tablet.png "Screenshot of working demo on tablet.")
